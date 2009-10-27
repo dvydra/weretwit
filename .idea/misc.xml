@@ -3,16 +3,6 @@
   <component name="DependencyValidationManager">
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
-  <component name="FacetAutodetectingManager">
-    <autodetection-disabled>
-      <facet-type id="web">
-        <modules>
-          <module name="were-checker" />
-        </modules>
-      </facet-type>
-    </autodetection-disabled>
-  </component>
-  <component name="IdProvider" IDEtalkID="0C6F126D13C7B4B1E66B4C65C5B674B8" />
   <component name="JavadocGenerationManager">
     <option name="OUTPUT_DIRECTORY" />
     <option name="OPTION_SCOPE" value="protected" />
@@ -38,14 +28,13 @@
     </option>
   </component>
   <component name="ProjectDetails">
-    <option name="projectName" value="were-checker" />
+    <option name="projectName" value="weretwit" />
   </component>
-  <component name="ProjectKey">
-    <option name="state" value="project://default" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_5" assert-keyword="true" jdk-15="true" project-jdk-name="1.5" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" assert-keyword="true" jdk-15="true" project-jdk-name="1.6" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/classes" />
+  <component name="SvnBranchConfigurationManager">
+    <option name="mySupportsUserInfoFilter" value="true" />
   </component>
-  <component name="WebServicesPlugin" addRequiredLibraries="true" />
 </project>
 

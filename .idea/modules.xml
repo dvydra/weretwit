@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/were-checker.iml" filepath="$PROJECT_DIR$/were-checker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/main/Main.iml" filepath="$PROJECT_DIR$/src/main/Main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/test/Test.iml" filepath="$PROJECT_DIR$/src/test/Test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/weretwit.iml" filepath="$PROJECT_DIR$/weretwit.iml" />
     </modules>
   </component>
 </project>
