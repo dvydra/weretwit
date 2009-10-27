@@ -2,7 +2,7 @@ package net.tackley.weretwit.controller;
 
 import com.google.inject.*;
 import net.tackley.MyMainModule;
-import net.tackley.weretwit.Moon;
+import net.tackley.weretwit.moon.Moon;
 import twitter4j.Status;
 import twitter4j.Twitter;
 import twitter4j.TwitterException;

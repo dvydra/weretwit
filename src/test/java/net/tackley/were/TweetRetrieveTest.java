@@ -1,7 +1,7 @@
 package net.tackley.were;
 
-import net.tackley.weretwit.CalendarBasedMoon;
-import net.tackley.weretwit.Moon;
+import net.tackley.weretwit.moon.CalendarBasedMoon;
+import net.tackley.weretwit.moon.Moon;
 import org.junit.Test;
 import twitter4j.Status;
 import twitter4j.Twitter;

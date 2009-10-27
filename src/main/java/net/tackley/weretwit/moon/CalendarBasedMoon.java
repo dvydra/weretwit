@@ -1,4 +1,4 @@
-package net.tackley.weretwit;
+package net.tackley.weretwit.moon;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -58,7 +58,7 @@ public class CalendarBasedMoon implements Moon {
     public CalendarBasedMoon() {
     }
 
-    public int getPhaseOfMoon(Calendar cal) {
+    private int getPhaseOfMoon(Calendar cal) {
         int dayOfTheYear = cal.get(Calendar.DAY_OF_YEAR);
         int yearInMetonicCycle = ((cal.get(Calendar.YEAR) - 1900) % 19) + 1;
         int epact = (11 * yearInMetonicCycle + 18) % 30;

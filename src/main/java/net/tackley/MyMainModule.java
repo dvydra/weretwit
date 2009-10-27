@@ -1,8 +1,8 @@
 package net.tackley;
 
 import com.google.inject.AbstractModule;
-import net.tackley.weretwit.CalendarBasedMoon;
-import net.tackley.weretwit.Moon;
+import net.tackley.weretwit.moon.CalendarBasedMoon;
+import net.tackley.weretwit.moon.Moon;
 
 public class MyMainModule extends AbstractModule {
     @Override
