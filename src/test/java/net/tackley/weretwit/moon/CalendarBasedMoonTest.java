@@ -13,7 +13,7 @@ public class CalendarBasedMoonTest {
         GregorianCalendar gregorianCalendar = new GregorianCalendar();
         gregorianCalendar.set(1976, 10, 16);
 
-        int phaseOfMoon = moon.getPhaseOfMoon(gregorianCalendar.getTime());
-        assertEquals(phaseOfMoon, 7);
+        double phaseOfMoon = moon.getPhaseOfMoon(gregorianCalendar.getTime());
+        assertEquals(phaseOfMoon, 7, 0);
     }
 }

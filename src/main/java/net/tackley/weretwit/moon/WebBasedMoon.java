@@ -2,6 +2,7 @@ package net.tackley.weretwit.moon;
 
 
 import com.google.inject.Inject;
+import net.tackley.weretwit.utils.HttpUtil;
 import twitter4j.org.json.JSONException;
 import twitter4j.org.json.JSONObject;
 
@@ -17,20 +18,20 @@ public class WebBasedMoon implements Moon {
         this.httpUtil = new HttpUtil();
     }
 
-    public int getPhaseOfMoon(Date date) {
+    public double getPhaseOfMoon(Date date) {
 
         String dateString = parseStringFrom(date);
         String s = httpUtil.getPage(String.format("http://www.trynt.com/moon-phase-api/v1/?d=%s&fo=json&f=0", dateString));
-        JSONObject o;
+        double moonPhase = 0;
         try {
-            o = new JSONObject(s);
-            o.get("trynt.moon-phase.moon-phase-position");
-            catch(JSONException
-            e){
-                //
-            }
-            return 0;
+            moonPhase = new JSONObject(s).getJSONObject("trynt").getJSONObject("moon-phase").getDouble("moon-phase-position");
         }
+        catch (JSONException
+                e) {
+            e.printStackTrace();
+        }
+        return moonPhase;
+    }
 
     private String parseStringFrom(Date date) {
         SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd");

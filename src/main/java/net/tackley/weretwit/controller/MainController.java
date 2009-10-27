@@ -33,13 +33,13 @@ public class MainController extends HttpServlet {
 
         Twitter twit = new Twitter();
         try {
-            List<Status> timeline = twit.getUserTimeline("tackers");
+            List<Status> timeline = twit.getUserTimeline("dvydra");
 
             for (Status status : timeline) {
                 String text = status.getText();
                 Date createdAt = status.getCreatedAt();
-                int phaseOfMoon = moon.getPhaseOfMoon(createdAt);
-                writer.printf("\"%s\" tweeted at %s (phase %d)\n", text, createdAt, phaseOfMoon);
+                double phaseOfMoon = moon.getPhaseOfMoon(createdAt);
+                writer.printf("\"%s\" tweeted at %s (phase %f)\n", text, createdAt, phaseOfMoon);
             }
 
         } catch (TwitterException e) {

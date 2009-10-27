@@ -58,17 +58,17 @@ public class CalendarBasedMoon implements Moon {
     public CalendarBasedMoon() {
     }
 
-    private int getPhaseOfMoon(Calendar cal) {
+    private long getPhaseOfMoon(Calendar cal) {
         int dayOfTheYear = cal.get(Calendar.DAY_OF_YEAR);
         int yearInMetonicCycle = ((cal.get(Calendar.YEAR) - 1900) % 19) + 1;
         int epact = (11 * yearInMetonicCycle + 18) % 30;
         if ((epact == 25 && yearInMetonicCycle > 11) || epact == 24) {
             epact++;
         }
-        return (((((dayOfTheYear + epact) * 6) + 11) % 177) / 22) & 7;
+        return ((((((dayOfTheYear + epact) * 6) + 11) % 177) / 22) & 7);
     }
 
-    public int getPhaseOfMoon(Date date) {
+    public double getPhaseOfMoon(Date date) {
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
         return getPhaseOfMoon(calendar);

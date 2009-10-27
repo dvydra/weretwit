@@ -1,4 +1,4 @@
-package net.tackley.weretwit.moon;
+package net.tackley.weretwit.utils;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

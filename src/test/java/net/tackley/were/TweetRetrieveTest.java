@@ -17,7 +17,7 @@ public class TweetRetrieveTest {
 
 
         for (Status status : timeline) {
-            System.out.printf("\"%s\" tweeted at %s (phase %d)\n", status.getText(), status.getCreatedAt(),
+            System.out.printf("\"%s\" tweeted at %s (phase %f)\n", status.getText(), status.getCreatedAt(),
                     moon.getPhaseOfMoon(status.getCreatedAt()));
         }
     }
