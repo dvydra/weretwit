@@ -26,8 +26,7 @@ public class WebBasedMoon implements Moon {
         try {
             moonPhase = new JSONObject(s).getJSONObject("trynt").getJSONObject("moon-phase").getDouble("moon-phase-position");
         }
-        catch (JSONException
-                e) {
+        catch (JSONException e) {
             e.printStackTrace();
         }
         return moonPhase;
