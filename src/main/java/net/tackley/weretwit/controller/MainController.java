@@ -3,6 +3,8 @@ package net.tackley.weretwit.controller;
 import com.google.inject.*;
 import net.tackley.MyMainModule;
 import net.tackley.weretwit.moon.Moon;
+import net.tackley.weretwit.utils.PropertiesModule;
+import net.tackley.weretwit.utils.PropertiesProvider;
 import twitter4j.Status;
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
@@ -19,19 +21,19 @@ import java.util.List;
 @Singleton
 public class MainController extends HttpServlet {
     private Moon moon;
+    private PropertiesProvider propertiesProvider;
 
     @Inject
     public MainController() {
-        Injector i = Guice.createInjector(Stage.DEVELOPMENT, new MyMainModule());
+        Injector i = Guice.createInjector(Stage.DEVELOPMENT, new MyMainModule(), new PropertiesModule());
         this.moon = i.getInstance(Moon.class);
-        System.out.println("Constructed!");
+        this.propertiesProvider = i.getInstance(PropertiesProvider.class);
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         PrintWriter writer = resp.getWriter();
-
-        Twitter twit = new Twitter();
+        Twitter twit = new Twitter(propertiesProvider.getUsername(), propertiesProvider.getPassword());
         try {
             List<Status> timeline = twit.getUserTimeline("dvydra");
             writer.printf("<html><body><ul>");
