@@ -8,16 +8,16 @@ import net.tackley.weretwit.controller.MainController;
 
 public class MyGuiceServletConfig extends GuiceServletContextListener {
 
-	public MyGuiceServletConfig() {
-	}
+    public MyGuiceServletConfig() {
+    }
 
-	@Override
-  protected Injector getInjector() {
-    return Guice.createInjector(new MyMainModule(), new ServletModule() {
-	    @Override
-	    protected void configureServlets() {
-		    serve("/", "*.hello.html").with(MainController.class);
-	    }
-    });
-  }
+    @Override
+    protected Injector getInjector() {
+        return Guice.createInjector(new MyMainModule(), new ServletModule() {
+            @Override
+            protected void configureServlets() {
+                serveRegex("/.*").with(MainController.class);
+            }
+        });
+    }
 }

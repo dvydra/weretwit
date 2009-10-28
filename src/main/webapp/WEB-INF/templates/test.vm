@@ -1,0 +1,7 @@
+<html><body><ul>
+#foreach ($tweet in $tweets)
+    <li style='background-color:#${tweet.phaseInHex}0000'>"$tweet.text" tweeted at $tweet.createdAt</li>
+#end
+
+
+</ul></body></html>
