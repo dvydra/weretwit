@@ -9,11 +9,11 @@ public class PropertiesModule extends AbstractModule {
     protected void configure() {
         PropertiesProvider propertiesProvider = new PropertiesProvider();
         try {
-            Properties twitterProperties = propertiesProvider.loadProperties("twitter.properties");
+            Properties twitterProperties = propertiesProvider.loadProperties("/net/tackley/weretwit/utils/twitter.properties");
             bindConstant().annotatedWith(Names.named("twitter.username")).to(twitterProperties.getProperty("twitter.username"));
             bindConstant().annotatedWith(Names.named("twitter.password")).to(twitterProperties.getProperty("twitter.password"));
         } catch (RuntimeException e) {
-            addError("Could not configure database properties", e);
+            addError("Could not configure twitter properties", e);
         }
     }
 

@@ -18,7 +18,7 @@
       </option>
       <option name="myRunnerSettings">
         <MavenRunnerSettings>
-          <option name="jreName" value="#JAVA_INTERNAL" />
+          <option name="jreName" value="1.5" />
           <option name="mavenProperties">
             <map />
           </option>
