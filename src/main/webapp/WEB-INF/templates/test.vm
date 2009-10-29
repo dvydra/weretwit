@@ -1,7 +1,11 @@
-<html><body><ul>
-#foreach ($tweet in $tweets)
-    <li style='background-color:#${tweet.phaseInHex}0000'>"$tweet.text" tweeted at $tweet.createdAt</li>
+<html><body>
+#if ($user_errors)
+<h1>$user_errors</h1>
+#else
+<ul>
+    #foreach ($tweet in $tweets)
+        <li style='background-color:#${tweet.phaseInHex}0000'>"$tweet.text" tweeted at $tweet.createdAt</li>
+    #end
+</ul>
 #end
-
-
-</ul></body></html>
+</body></html>
